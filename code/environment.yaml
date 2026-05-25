@@ -1,0 +1,25 @@
+name: stat214-lab3
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - joblib
+  - gensim
+  - pytorch
+  - pytorch-cuda=11.8
+  - pip
+  - pip:
+    - peft
+    - transformers
+    - accelerate
+    - safetensors
+    - shap
