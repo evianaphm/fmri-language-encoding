@@ -1,0 +1,42 @@
+We have all agreed on these attributions:
+
+Sharazad Ali worked on:
+- Set up the Bridges2 computing environment and conducted initial data exploration (confirmed data structure, story validity, subject names, Y matrix shapes, TR = 2.0s)
+- Implemented the train/test story split in code/lab31/split.py
+- Implemented the shared preprocessing pipeline in code/lab31/preprocess.py (downsample, align_X_to_Y_lengths, trim, lag) 
+- Extracted pre-trained BERT embeddings in code/lab32/embeddings_bert_pretrained.py
+- Ran SHAP interpretation analysis in code/lab33/shap_analysis.py on the top 3 well-predicted voxels 
+- Wrote the Introduction, Data, and Methods sections of the final report
+- Maintained the group README throughout the project with step-by-step guides, task splits, and status updates
+
+Mark Szekacs worked on:
+- Implemented the Bag-of-Words embedding pipeline (code/lab31/embeddings_bow.py): fit vocabulary on training stories only, downsampled word-level representations to the fMRI TR grid, and applied the shared preprocessing pipeline (alignment, trimming, HRF delays)
+- Developed ridge_32.py and plot_32.py: fit voxel-wise ridge regression models with bootstrap cross-validation for per-voxel alpha selection across all six embedding methods for both subjects; computed CC metrics (mean, median, top 5%, top 1%); generated the full suite of comparison figures
+- Implemented the initial version of the LIME interpretability analysis (code/lab33/lime_analysis.py): ran LIME on the same high-CC voxels and test stories as the SHAP analysis
+- Wrote the initial version of the Interpretability section and the final version of the Conclusion (Section 9), and handled final assembly and formatting of the report
+
+Eviana Pham worked on:
+- Fixed and revised the shared preprocessing pipeline in code/lab31/preprocess.py, including the alignment, trimming, and HRF-delay steps used across embedding methods.
+- Implemented the Word2Vec and GloVe embedding pipelines, including loading pretrained embeddings, handling out-of-vocabulary words, and applying the shared preprocessing pipeline.
+- Revised code/lab31/ridge_31.py to standardize ridge-regression evaluation outputs and compute the CC summary metrics used for Lab 3.1 comparisons.
+- Revised full BERT fine-tuning for Lab 3.2 in code/lab32/finetune_bert.py using masked language modeling on training stories only.
+- Implemented LoRA fine-tuning for Lab 3.2 in code/lab32/finetune_lora.py, including parameter-efficient adaptation of BERT query/value attention layers.
+- Updated the BERT embedding extraction pipeline to use contextual overlapping chunks and subword-to-word alignment.
+- Fixed and revised the Lab 3.2 ridge regression pipeline in code/lab32/ridge_32.py, including model saving and evaluation outputs.
+- Implemented Lab 3.2 stability analyses, including the pretrained word-level BERT control and LoRA rank sensitivity checks.
+- Revised code/lab32/plot_32.py and added stability plotting code to generate BERT, LoRA, and contextual-embedding comparison figures.
+- Reworked the Lab 3.3 SHAP/LIME interpretation pipeline using wrapper-based text perturbations that rerun BERT embedding extraction, fMRI preprocessing, and ridge prediction for perturbed stories.
+- Generated wrapper SHAP/LIME figures for the final interpretability analysis.
+- Updated the README with the project structure, run instructions, Bridges2 result locations, and guidance for accessing saved outputs.
+- Cleaned and reorganized the repository structure, including run scripts, report files, generated figures, and result paths.
+- Revised the report structure, layout, figure placement, captions, and Sections 2-5 for clarity and consistency.
+- Wrote the Results, Interpretation with SHAP/LIME, Stability Analysis, and Discussion sections of the final report.
+
+Ziyu Ge worked on:
+- Implemented \texttt{code/lab31/ridge\_31.py}, including a memory-efficient ridge regression pipeline with bootstrap cross-validation for per-voxel alpha selection and per-story stability evaluation. 
+- Implemented \texttt{code/lab31/plot\_31.py} to generate all result figures and stability check. 
+- Implemented the masked language modeling utilities in \texttt{code/fine\_tune\_bert.py}.
+- Fixed a GPU device-placement bug. 
+- Implemented the standalone checkpoint-based embedding extraction script \texttt{code/lab32/embeddings\_bert\_finetuned.py}.
+- Checked the workflow end-to-end for Lab 3.1 and Lab 3.2 and running it on Bridges2 and saving the checkpoint and design matrices.
+- Initial stability check for lab 3.1.
