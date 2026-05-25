@@ -1,4 +1,4 @@
-name: stat214-lab3
+name: fmri-language-encoding
 channels:
   - pytorch
   - nvidia
